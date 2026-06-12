@@ -9,6 +9,7 @@ BREW="brew install --quiet --yes"
 
 echo "Installing macOS applications and tools"
 $BREW \
+  docker \
   starship \
   tmux \
   vim \

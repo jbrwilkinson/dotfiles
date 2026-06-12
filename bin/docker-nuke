@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "This will delete EVERYTHINGGGGGGGG, are you sure (y/N)? " -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
+docker ps -q | xargs -r docker kill > /dev/null
+docker system prune --all --volumes --force
+docker volume prune --all --force
