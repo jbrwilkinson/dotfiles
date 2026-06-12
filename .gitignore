@@ -1,0 +1,48 @@
+!.gitignore
+!.gitattributes
+!.profile.d
+.git-blame-ignore-revs
+
+# Build Output
+*.o
+*.so
+*.mod
+*.a
+*.lib
+*.exe
+*.out
+
+# Python
+*/__pycache__
+*.pyc
+.cache/*
+.mypy_cache/*
+.ruff_cache
+.venv/
+*python3.*-venv/
+coverage.xml
+
+# gcov
+*.gcda
+*.gcno
+
+# misc
+*.bak
+*.moo
+
+# node
+node_modules/
+.vscode/*
+coverage/
+**/tsconfig.json
+
+# macOS
+.DS_Store
+
+# secrets
+.env
+.local.env
+.secrets
+
+# local-only
+**/*.local.*

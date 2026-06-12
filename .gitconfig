@@ -1,0 +1,35 @@
+[alias]
+  fap = fetch --all --prune
+  grepr = grep --recurse-submodules
+  logdog = log --decorate-refs-exclude=refs/tags --oneline --graph --all
+  logdogt = log --decorate --oneline --graph --all
+  st = status -s
+  whatadded = log --diff-filter=A
+
+[core]
+  excludesFile = ~/.gitignore
+
+[credential]
+  helper = cache
+  helper =
+  helper = /usr/local/share/gcm-core/git-credential-manager
+
+[gc]
+  writeCommitGraph = true
+
+[hub]
+  host = github.com
+
+[init]
+  defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+  autoSetupRemote = true
+  followTags = true
+
+[user]
+  email = github@jbrwilkinson.com
+  name = James Wilkinson
