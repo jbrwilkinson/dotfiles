@@ -44,7 +44,15 @@ if [ -f /.dockerenv ]; then
 elif [[ "$(uname -s)" == "Darwin" ]]; then
     PACKAGES=(macOS claude_mcps)
 elif [[ "$(uname -s)" == "Linux" ]]; then
-    PACKAGES=(linux)
+    DISTRO=$(uname -a | cut -d' ' -f2)
+    if [ "$DISTRO" == "debian" ]; then
+        PACKAGES=(linux/debian)
+    elif [ "$DISTRO" == "ubuntu" ]; then
+        PACKAGES=(linux/debian)
+    else
+        echo "Unsupported Linux distro: $(uname -a)"
+        exit 2
+    fi
 else
     echo "Unknown environment: $(uname -a)"
     exit 1
