@@ -23,9 +23,11 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
     for bin in /opt/homebrew/opt/*/bin; do
         [[ -d "$bin" ]] && PATHSEARCH+=("$bin")
     done
+elif [[ "$(uname -s)" == "Linux" ]]; then
+    ENVIRONMENT=linux
 else
     echo "Unknown environment: $(uname -a)"
-    exit 1
+    return 1 2>/dev/null || exit 1
 fi
 
 export ENVIRONMENT=$ENVIRONMENT
